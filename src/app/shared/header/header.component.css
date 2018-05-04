@@ -1,0 +1,19 @@
+/**header*/
+
+.header{
+    display: flex;
+    height: 70px;
+    max-width: 100%;
+    flex-direction: row;
+    color: transparent;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    padding: 0 80px;
+}
+
+.header a {
+    padding: 0 20px;
+    color: white;
+    font-family: 'Heebo', sans-serif;
+}

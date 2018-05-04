@@ -1,0 +1,28 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    -webkit-box-shadow: 0px -15px 50px -18px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px -15px 50px -18px rgba(0,0,0,0.15);
+    box-shadow: 0px -15px 50px -18px rgba(0,0,0,0.15);
+}
+
+.footer p {
+    color: #B5B5B5;
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.8em;
+    margin-top: 0;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social img {
+    height: 30px;
+    margin: 5px;
+}
