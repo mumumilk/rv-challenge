@@ -1,3 +1,15 @@
-<app-hotel-stars-filter></app-hotel-stars-filter>
-<app-hotel-value-filter></app-hotel-value-filter>
-<app-hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel-card>
+
+<div class="list-container">
+    <div class="list-header">
+        <p>Best choices between date start and date end</p>
+    </div>
+    <div class="list-content">
+        <div class="list-filters">
+            filtros
+        </div>
+        <div class="list-items">
+            <app-hotel-card></app-hotel-card>
+        </div>
+    </div>
+</div>
+<!-- <app-hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel-card> -->

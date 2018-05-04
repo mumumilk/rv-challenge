@@ -15,7 +15,7 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private hotelsService: HotelsService) {}
 
   ngOnInit() {
-    this.hotelSubs = this.getHotelsSubscription();
+    // this.hotelSubs = this.getHotelsSubscription();
   }
 
   ngOnDestroy() {

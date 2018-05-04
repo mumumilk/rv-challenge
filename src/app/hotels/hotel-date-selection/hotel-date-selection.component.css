@@ -1,17 +1,17 @@
-
 .selection-card {
-    /* height: 500px; */
-    width: 50%;
+    min-width: 600px;
     background: white;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.68);
-    -moz-box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.68);
-    box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.68);
+    -webkit-box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.48);
+    box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.48);
     padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5%;
+    border-bottom: 10px solid white;
 }
 
 .selection-card-header {
