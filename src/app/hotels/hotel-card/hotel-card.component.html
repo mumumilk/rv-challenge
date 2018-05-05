@@ -1,4 +1,28 @@
-<div>
-    {{hotel.name}}
-    <img [src]="hotel.image" style="width: 50px; height: 50px" alt="">
+<div class="hotel-container shadow">
+    <div class="hotel-image-container">
+        <div [style.backgroundImage]="'url('+ hotel.image +')'" class="shadow"></div>
+    </div>
+    <div class="hotel-description-container">
+        <div>
+            <app-stars [stars]="hotel.rate" size="15"></app-stars>
+        </div>
+        <div>
+            <h3>{{hotel.name | uppercase}}</h3>
+        </div>
+        <div>
+            <p>{{hotel.description}}</p>
+        </div>
+        <div class="hotel-actions">
+            <button class="btn btn-orange sm">Book now</button>
+            <button class="btn btn-green sm">Price history</button>
+        </div>
+    </div>
+    <div class="hotel-price-container">
+        <div>
+            <p>Total <b>8 nights</b></p>
+            <h2>$670</h2>
+            <p>Per night</p>
+            <h3>$670</h3>
+        </div>
+    </div>
 </div>

@@ -4,6 +4,7 @@ import { HotelsService } from './shared/hotels.service';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { HotelDateSelectionComponent } from './hotel-date-selection/hotel-date-selection.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,7 @@ import { HotelDateSelectionComponent } from './hotel-date-selection/hotel-date-s
         HotelCardComponent,
         HotelDateSelectionComponent
     ],
-    imports: [ CommonModule ],
+    imports: [ CommonModule, SharedModule],
     exports: [
         HotelListComponent,
         HotelCardComponent,

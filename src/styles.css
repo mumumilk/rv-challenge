@@ -24,10 +24,17 @@ button:focus {
 
 .btn {
     font-family: 'Heebo', sans-serif;
-    font-weight: bold;
-    padding: 12px 33px;
+    font-weight: regular;
     border-radius: 50px;
     cursor: pointer;
+}
+
+.sm {
+    padding: 6px 16px;
+}
+
+.md {
+    padding: 12px 33px;
 }
 
 .btn-orange {
@@ -38,4 +45,15 @@ button:focus {
 .btn-orange:hover {
     background: #F98100;
     color: white;
+}
+
+.btn-green {
+    background: #79BD1A;
+    color: white;
+}
+
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
 }
