@@ -1,7 +1,7 @@
 .shadow {
-    -webkit-box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.48);
-    -moz-box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.48);
-    box-shadow: 0px 0px 68px -7px rgba(0,0,0,0.48);
+    -webkit-box-shadow: 0px 0px 40px -7px rgba(0,0,0,0.48);
+    -moz-box-shadow: 0px 0px 40px -7px rgba(0,0,0,0.48);
+    box-shadow: 0px 0px 40px -7px rgba(0,0,0,0.48);
 }
 
 .hotel-container {
@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: row;
     padding: 20px 0;
+    margin: 30px 0;
 }
 
 .hotel-image-container {

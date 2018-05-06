@@ -19,10 +19,10 @@
     </div>
     <div class="hotel-price-container">
         <div>
-            <p>Total <b>8 nights</b></p>
-            <h2>$670</h2>
+            <p>Total <b>{{nights}} nights</b></p>
+            <h2>${{hotel.price * nights | number : '1.0-2'}}</h2>
             <p>Per night</p>
-            <h3>$670</h3>
+            <h3>${{hotel.price}}</h3>
         </div>
     </div>
 </div>

@@ -1,0 +1,30 @@
+<div class="datepicker-container">
+    <div class="datepicker-header">
+        <p>August / 2017</p>
+    </div>
+    <table class="datepicker-content">
+        <thead>
+            <th>S</th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>T</th>
+            <th>F</th>
+            <th>S</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let week of weeks; let wi = index;">
+                <td 
+                    *ngFor="let day of week.days; let di = index;"
+                    (click)="selectDay(day.number, wi, di); selectDays()">
+                    <div
+                        [class.nohover]="!day.number" 
+                        [class.selected]="day.selected"
+                        [class.round]="day.selected && !checkout"
+                        [class.checkin]="wi == checkin?.weekIndex && di == checkin?.dayIndex && checkout"
+                        [class.checkout]="wi == checkout?.weekIndex && di == checkout?.dayIndex">{{day.number}}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
