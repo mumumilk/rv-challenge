@@ -6,15 +6,17 @@
         <div class="date-selected-container">
             <div class="selected-date">
                 <h3>CHECK-IN</h3>
-                <p>August
-                    <b>13</b>, 2017</p>
+                <p *ngIf="datePickerService.checkin">August
+                    <b>{{datePickerService.checkin.number}}</b>, 2017</p>
+                <p *ngIf="!datePickerService.checkin">Select a <b>check-in</b> date</p>
             </div>
             <div class="selected-date">
                 <h3>CHECK-OUT</h3>
-                <p>August
-                    <b>13</b>, 2017</p>
+                <p *ngIf="datePickerService.checkout">August
+                    <b>{{datePickerService.checkout.number}}</b>, 2017</p>
+                <p *ngIf="!datePickerService.checkout">Select a <b>check-out</b> date</p>
             </div>
-            <button class="btn btn-orange md">Search hotels</button>
+            <button class="btn btn-orange md" (click)="searchHotels()">Search hotels</button>
         </div>
         <div class="date-picker-container">
             <app-date-picker></app-date-picker>

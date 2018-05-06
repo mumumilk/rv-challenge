@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hotel } from '../shared/hotel.model';
+import { DatePickerService } from '../../shared/date-picker/shared/date-picker.service';
+import { HotelsService } from '../shared/hotels.service';
 
 @Component({
     selector: 'app-hotel-card',
@@ -8,15 +10,14 @@ import { Hotel } from '../shared/hotel.model';
 })
 export class HotelCardComponent implements OnInit {
     @Input() hotel: Hotel = new Hotel();
-    nights = Math.floor(Math.random() * 10) + 1;
-    //     'Hyatt Place Charlotte Airport/Lake Pointe',
-    //     'This hotel is located 7 miles from downtown Charlotte and 5 miles from Charlotte Douglas International Airport.',
-    //     'https://melhorespousadas.tur.br/uploads/pousadas-fotos/012/img-hotel-aguas-da-serra-135113.jpg',
-    //     3,
-    //     670
-    // );
 
-    constructor() { }
+    get nights(): number {
+        return this.hotelsService.totalDays;
+    }
+
+    constructor(
+        private hotelsService: HotelsService
+    ) { }
 
     ngOnInit(): void { }
 }

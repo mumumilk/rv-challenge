@@ -1,15 +1,34 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { DatePickerService } from './shared/date-picker.service';
 
 @Component({
     selector: 'app-date-picker',
     templateUrl: './date-picker.component.html',
     styleUrls: ['./date-picker.component.css']
 })
-export class DatePickerComponent implements OnInit {
-    constructor() { }
+export class DatePickerComponent {
+    constructor(
+        private datePickerService: DatePickerService
+    ) { }
 
-    checkin = null;
-    checkout = null;
+    private _checkin = null;
+    private _checkout = null;
+
+    set checkin(value) {
+        this._checkin = value;
+        this.datePickerService.checkin = this._checkin;
+    }
+    get checkin(): any {
+        return this._checkin;
+    }
+
+    set checkout(value) {
+        this._checkout = value;
+        this.datePickerService.checkout = this._checkout;
+    }
+    get checkout(): any {
+        return this._checkout;
+    }
 
     weeks =
         [
@@ -74,7 +93,6 @@ export class DatePickerComponent implements OnInit {
                     ]
             },
         ];
-    ngOnInit(): void { }
 
 
     selectDay(selectedDay: number, weekIndex: number, dayIndex: number) {
@@ -120,8 +138,8 @@ export class DatePickerComponent implements OnInit {
         this.weeks.forEach(week => {
             week.days.forEach(day => {
                 if (day.number &&
-                (day.number <= (this.checkout ? this.checkout.number : 0) &&
-                day.number >= (this.checkin ? this.checkin.number : 0))) {
+                    (day.number <= (this.checkout ? this.checkout.number : 0) &&
+                        day.number >= (this.checkin ? this.checkin.number : 0))) {
                     day.selected = true;
                 } else {
                     day.selected = false;

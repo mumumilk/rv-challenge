@@ -34,7 +34,7 @@
     flex: 1.5;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -47,13 +47,14 @@
     font-family: 'Heebo', sans-serif;
     letter-spacing: 1px;
     text-align: left;
+    min-width: 70%;
 }
 
 .selected-date h3 {
     color: #555555;
     font-weight: 400;
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.1em;
 }
 
 .selected-date p {

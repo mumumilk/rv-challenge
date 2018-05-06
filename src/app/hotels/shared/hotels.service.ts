@@ -10,6 +10,13 @@ export class HotelsService {
     starsFilterChanged: EventEmitter<any> = new EventEmitter<any>();
     valueFilterChanged: EventEmitter<any> = new EventEmitter<any>();
 
+    checkin: any = null;
+    checkout: any = null;
+
+    get totalDays(): number {
+        return this.checkout.number - this.checkin.number || 0;
+    }
+
     constructor(private _http: Http) {}
 
     getHotels(): Observable<Response> {
