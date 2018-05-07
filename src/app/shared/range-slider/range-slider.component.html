@@ -1,0 +1,6 @@
+<section class="range-slider">
+    <!-- <p>Price range per night</p> -->
+    <span class="rangeValues"></span>
+    <input #slider1 [value]="min" [min]="min" [max]="max" step="1" type="range">
+    <input #slider2 [value]="max" [min]="min" [max]="max" step="1" type="range" (change)="changed(slider1)">
+</section>

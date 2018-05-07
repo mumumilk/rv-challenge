@@ -1,11 +1,12 @@
-<div class="list-container">
-    <div class="list-header" *ngIf="hotels.length > 0">
-        <p>Best choices between August {{hotelsService.checkin?.number}}, 2017 and August {{hotelsService.checkout?.number}},
+<div class="list-container" *ngIf="hotels.length > 0">
+    <div class="list-header">
+        <p class="title">Best choices between August {{hotelsService.checkin?.number}}, 2017 and August {{hotelsService.checkout?.number}},
             2017</p>
     </div>
     <div class="list-content">
         <div class="list-filters">
-            filtros
+            <p class="title">Filters</p>
+            <app-range-slider min="100" max="600"></app-range-slider>
         </div>
         <div class="list-items">
             <app-hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel-card>
