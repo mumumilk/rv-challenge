@@ -1,6 +1,17 @@
+
 <section class="range-slider">
-    <!-- <p>Price range per night</p> -->
     <span class="rangeValues"></span>
-    <input #slider1 [value]="min" [min]="min" [max]="max" step="1" type="range">
-    <input #slider2 [value]="max" [min]="min" [max]="max" step="1" type="range" (change)="changed(slider1)">
+    <input #sliderMin [value]="min" [min]="min" [max]="max" step="1" type="range" (change)="sliderMinChanged(sliderMin)">
+    <input #sliderMax [value]="600" [min]="min" [max]="max" step="1" type="range" (change)="sliderMaxChanged(sliderMax)">
+    <p class="left">Price range per <b>night</b></p>
 </section>
+<div class="range-labels" *ngIf="min && max">
+    <div>
+        <p class="left">Min</p>
+        <h3>${{selectedMinValue}}</h3>
+    </div>
+    <div>
+        <p class="right">Max</p>
+        <h3>${{selectedMaxValue}}</h3>
+    </div>
+</div>

@@ -6,6 +6,7 @@ import { StarsComponent } from './stars/stars.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { DatePickerService } from './date-picker/shared/date-picker.service';
 import { RangeSliderComponent } from './range-slider/range-slider.component';
+import { StarsSelectionComponent } from './stars-selection/stars-selection.component';
 
 @NgModule({
     declarations: [
@@ -13,7 +14,8 @@ import { RangeSliderComponent } from './range-slider/range-slider.component';
         FooterComponent,
         StarsComponent,
         DatePickerComponent,
-        RangeSliderComponent
+        RangeSliderComponent,
+        StarsSelectionComponent
     ],
     imports: [ CommonModule ],
     exports: [
@@ -21,7 +23,8 @@ import { RangeSliderComponent } from './range-slider/range-slider.component';
         FooterComponent,
         StarsComponent,
         DatePickerComponent,
-        RangeSliderComponent
+        RangeSliderComponent,
+        StarsSelectionComponent
     ],
     providers: [ DatePickerService ],
 })

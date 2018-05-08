@@ -1,6 +1,30 @@
+p {
+    font-family: 'Heebo', sans-serif;
+    font-size: 0.7em;
+    color: #B5B5B5;
+    margin: 0;
+}
+
+
+h3 {
+    margin-top: 0px;
+    font-size: 1.5em;
+    font-family: 'Heebo', sans-serif;
+    color: #F98100;
+    opacity: 0.5;
+}
+
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
 section.range-slider {
     position: relative;
-    width: 200px;
+    width: 290px;
     height: 35px;
     text-align: center;
 }
@@ -11,7 +35,7 @@ section.range-slider input {
     overflow: hidden;
     left: 0;
     top: 15px;
-    width: 200px;
+    width: 100%;
     outline: none;
     height: 25px;
     margin: 0;
@@ -80,3 +104,10 @@ input[type=range] {
     -webkit-appearance: none;
     margin-top: -9px;
   }
+
+.range-labels {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 5px;
+}

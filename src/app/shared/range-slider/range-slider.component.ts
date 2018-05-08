@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 
 @Component({
     selector: 'app-range-slider',
@@ -6,23 +6,39 @@ import { Component, OnInit, ViewChild, ElementRef, Input, AfterViewInit } from '
     styleUrls: ['./range-slider.component.css']
 })
 export class RangeSliderComponent implements OnInit, AfterViewInit {
-    constructor() { }
+    constructor(
+        private changeDetector: ChangeDetectorRef
+    ) { }
 
     @Input() max;
     @Input() min;
 
-    @ViewChild('slider1') slider1;
-    @ViewChild('slider2') slider2;
+    selectedMinValue;
+    selectedMaxValue;
+
+    @ViewChild('sliderMin') sliderMin;
+    @ViewChild('sliderMax') sliderMax;
 
     ngOnInit(): void {
+        this.selectedMinValue = this.min;
+        this.selectedMaxValue = this.max;
     }
 
     ngAfterViewInit() {
-        console.log(this.slider2);
-        this.slider2.value = 600;
+        this.sliderMin.nativeElement.value = this.min;
+        this.sliderMax.nativeElement.value = this.max;
+        this.changeDetector.markForCheck();
     }
 
-    changed(e) {
-        console.log(e.value);
+    sliderMinChanged(el) {
+        this.selectedMinValue = el.value;
     }
+
+    sliderMaxChanged(el) {
+        this.selectedMaxValue = el.value;
+    }
+
+
+
+
 }

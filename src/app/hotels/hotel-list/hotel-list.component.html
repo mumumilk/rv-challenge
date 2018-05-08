@@ -4,9 +4,13 @@
             2017</p>
     </div>
     <div class="list-content">
-        <div class="list-filters">
-            <p class="title">Filters</p>
-            <app-range-slider min="100" max="600"></app-range-slider>
+        <div class="list-filters-container">
+            <div class="list-filters">
+                <p class="title">Filters</p>
+                <app-range-slider min="100" max="600"></app-range-slider>
+                <hr>
+                <app-stars-selection></app-stars-selection>
+            </div>
         </div>
         <div class="list-items">
             <app-hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel-card>
