@@ -4,17 +4,20 @@ import { HotelsService } from './shared/hotels.service';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
 import { SharedModule } from '../shared/shared.module';
-import { TooltipModule } from '../shared/tooltip/tooltip.module';
+import { PricesHistoryModule } from '../prices-history/prices-history.module';
+import { HotelDescriptionComponent } from './hotel-description/hotel-description.component';
 
 @NgModule({
     declarations: [
         HotelListComponent,
-        HotelCardComponent
+        HotelCardComponent,
+        HotelDescriptionComponent
     ],
-    imports: [ CommonModule, SharedModule, TooltipModule],
+    imports: [ CommonModule, SharedModule, PricesHistoryModule],
     exports: [
         HotelListComponent,
-        HotelCardComponent
+        HotelCardComponent,
+        HotelDescriptionComponent
     ],
     providers: [ HotelsService ],
 })

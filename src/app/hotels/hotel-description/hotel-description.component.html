@@ -1,1 +1,35 @@
-<h1>hotel description</h1>
+<div class="hotel-description-container">
+    <div class="hotel-description-content">
+        <div>
+            <app-stars [stars]="hotel.rate" size="15"></app-stars>
+        </div>
+        <div>
+            <h3>{{hotel.name | uppercase}}</h3>
+        </div>
+        <div>
+            <p>{{hotel.description}}</p>
+        </div>
+        <div class="hotel-actions">
+            <button class="btn btn-orange sm">Book now</button>
+            <button class="btn btn-green sm">Price history</button>
+        </div>
+    </div>
+    <div class="hotel-price-container">
+        <div class="hotel-price-content">
+            <div>
+                <p>Total
+                    <b>{{nightsQuantity}} nights</b>
+                </p>
+            </div>
+            <div>
+                <h2>${{hotel.price * nightsQuantity | number : '1.0-2'}}</h2>
+            </div>
+            <div>
+                <p>Per night</p>
+            </div>
+            <div>
+                <h3>${{hotel.price}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,8 @@
         <div [style.backgroundImage]="'url('+ hotel.image +')'" class="shadow"></div>
     </div>
     <div class="hotel-card-content" *ngIf="description else priceHistory">
-            <div class="hotel-description-container">
+        <app-hotel-description [hotel]="hotel"></app-hotel-description>
+            <!-- <div class="hotel-description-container">
                     <div>
                         <app-stars [stars]="hotel.rate" size="15"></app-stars>
                     </div>
@@ -25,23 +26,10 @@
                         <p>Per night</p>
                         <h3>${{hotel.price}}</h3>
                     </div>
-                </div>
+                </div> -->
     </div>
 </div>
 
 <ng-template #priceHistory>
-    <div class="price-history-container">
-        <div class="price-history-header">
-            <h3>PRICE HISTORY 2017</h3>
-            <div class="back-to-description" (click)="toggleDescription()">
-                <img src="assets/img/back-description.svg" alt="">
-                <p>Back to description</p>
-            </div>
-        </div>
-        <div class="price-history-content" >
-            <div class="bar" [tooltip]="'$' + price.value" placement="top" *ngFor="let price of hotel.price_history" [style.height.px]="price.value / 3">
-                <!-- <span class="tooltiptext">$ {{price.value}}</span> -->
-            </div>
-        </div>
-    </div>
+    <app-price-history-chart [pricesHistory]="hotel.price_history"></app-price-history-chart>
 </ng-template>
