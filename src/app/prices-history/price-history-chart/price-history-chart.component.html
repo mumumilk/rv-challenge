@@ -10,4 +10,7 @@
         <div class="bar" [tooltip]="'$' + price.value" placement="top" *ngFor="let price of pricesHistory" [style.height.px]="price.value / 3">
         </div>
     </div>
+    <div class="price-history-footer">
+        <p *ngFor="let price of pricesHistory">{{price.month}}</p>
+    </div>
 </div>

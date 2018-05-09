@@ -1,9 +1,10 @@
 .price-history-container {
     height: 100%;
+    min-height: 267px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid #D8D8D8;
-    margin: 0 15px;
+    padding: 0 20px;
 }
 
 .price-history-header {
@@ -60,4 +61,19 @@
 
 .bar:hover {
     opacity: 1;
+}
+
+.price-history-footer {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.price-history-footer p {
+    margin: 0;
+    font-family: 'Heebo', sans-serif;
+    color: #B5B5B5;
 }
