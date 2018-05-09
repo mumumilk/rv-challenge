@@ -1,14 +1,15 @@
 import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { DatePickerComponent } from '../../shared/date-picker/date-picker.component';
 import { DatePickerService } from '../../shared/date-picker/shared/date-picker.service';
-import { HotelsService } from '../shared/hotels.service';
+import { HotelsService } from '../../hotels/shared/hotels.service';
+
 
 @Component({
-    selector: 'app-hotel-date-selection',
-    templateUrl: './hotel-date-selection.component.html',
-    styleUrls: ['./hotel-date-selection.component.css']
+    selector: 'app-date-selection',
+    templateUrl: './date-selection.component.html',
+    styleUrls: ['./date-selection.component.css']
 })
-export class HotelDateSelectionComponent implements OnInit {
+export class DateSelectionComponent implements OnInit {
     constructor(
         public datePickerService: DatePickerService,
         public hotelsService: HotelsService

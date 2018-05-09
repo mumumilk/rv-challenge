@@ -7,6 +7,8 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 import { DatePickerService } from './date-picker/shared/date-picker.service';
 import { RangeSliderComponent } from './range-slider/range-slider.component';
 import { StarsSelectionComponent } from './stars-selection/stars-selection.component';
+import { DateSelectionComponent } from './date-selection/date-selection.component';
+import { TooltipModule } from './tooltip/tooltip.module';
 
 @NgModule({
     declarations: [
@@ -15,16 +17,18 @@ import { StarsSelectionComponent } from './stars-selection/stars-selection.compo
         StarsComponent,
         DatePickerComponent,
         RangeSliderComponent,
-        StarsSelectionComponent
+        StarsSelectionComponent,
+        DateSelectionComponent
     ],
-    imports: [ CommonModule ],
+    imports: [ CommonModule, TooltipModule],
     exports: [
         HeaderComponent,
         FooterComponent,
         StarsComponent,
         DatePickerComponent,
         RangeSliderComponent,
-        StarsSelectionComponent
+        StarsSelectionComponent,
+        DateSelectionComponent
     ],
     providers: [ DatePickerService ],
 })

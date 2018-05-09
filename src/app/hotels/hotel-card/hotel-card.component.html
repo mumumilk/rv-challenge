@@ -39,8 +39,8 @@
             </div>
         </div>
         <div class="price-history-content" >
-            <div class="bar tooltip" *ngFor="let price of hotel.price_history" [style.height.px]="price.value / 3">
-                <span class="tooltiptext">$ {{price.value}}</span>
+            <div class="bar" [tooltip]="'$' + price.value" placement="top" *ngFor="let price of hotel.price_history" [style.height.px]="price.value / 3">
+                <!-- <span class="tooltiptext">$ {{price.value}}</span> -->
             </div>
         </div>
     </div>

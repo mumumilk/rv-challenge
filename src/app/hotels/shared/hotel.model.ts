@@ -1,3 +1,5 @@
+import { PriceHistory } from '../../prices-history/shared/price-history.model';
+
 export class Hotel {
     constructor(
         public name?: string,
@@ -26,30 +28,6 @@ export class Hotel {
             object['rate'],
             object['price'],
             PriceHistory.fromJSONArray(object['price_history'])
-        );
-    }
-}
-
-export class PriceHistory {
-    constructor(
-        public month?: string,
-        public value?: number
-    ) {}
-
-    static fromJSONArray(array: Array<any>): Array<PriceHistory> {
-        const newArray = new Array<PriceHistory>();
-
-        array.forEach(obj => {
-            newArray.push(this.fromJSONObject(obj));
-        });
-
-        return newArray;
-    }
-
-    static fromJSONObject(object: any): PriceHistory {
-        return new PriceHistory(
-            object['month'],
-            object['value']
         );
     }
 }

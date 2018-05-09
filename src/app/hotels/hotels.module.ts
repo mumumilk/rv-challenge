@@ -3,20 +3,18 @@ import { CommonModule } from '@angular/common';
 import { HotelsService } from './shared/hotels.service';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
 import { HotelCardComponent } from './hotel-card/hotel-card.component';
-import { HotelDateSelectionComponent } from './hotel-date-selection/hotel-date-selection.component';
 import { SharedModule } from '../shared/shared.module';
+import { TooltipModule } from '../shared/tooltip/tooltip.module';
 
 @NgModule({
     declarations: [
         HotelListComponent,
-        HotelCardComponent,
-        HotelDateSelectionComponent
+        HotelCardComponent
     ],
-    imports: [ CommonModule, SharedModule],
+    imports: [ CommonModule, SharedModule, TooltipModule],
     exports: [
         HotelListComponent,
-        HotelCardComponent,
-        HotelDateSelectionComponent
+        HotelCardComponent
     ],
     providers: [ HotelsService ],
 })

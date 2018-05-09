@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { HotelsService } from './hotels/shared/hotels.service';
 import { Hotel } from './hotels/shared/hotel.model';
 import { Subscription } from 'rxjs/Subscription';
-import { HotelDateSelectionComponent } from './hotels/hotel-date-selection/hotel-date-selection.component';
+import { DateSelectionComponent } from './shared/date-selection/date-selection.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   dateChangedSubs: Subscription;
 
-  @ViewChild('dateSelection') dateSelection: HotelDateSelectionComponent;
+  @ViewChild('dateSelection') dateSelection: DateSelectionComponent;
 
   constructor(private hotelsService: HotelsService) {}
 
