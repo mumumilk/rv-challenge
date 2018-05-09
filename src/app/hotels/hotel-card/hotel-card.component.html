@@ -2,27 +2,46 @@
     <div class="hotel-image-container">
         <div [style.backgroundImage]="'url('+ hotel.image +')'" class="shadow"></div>
     </div>
-    <div class="hotel-description-container">
-        <div>
-            <app-stars [stars]="hotel.rate" size="15"></app-stars>
-        </div>
-        <div>
-            <h3>{{hotel.name | uppercase}}</h3>
-        </div>
-        <div>
-            <p>{{hotel.description}}</p>
-        </div>
-        <div class="hotel-actions">
-            <button class="btn btn-orange sm">Book now</button>
-            <button class="btn btn-green sm">Price history</button>
-        </div>
-    </div>
-    <div class="hotel-price-container">
-        <div>
-            <p>Total <b>{{nights}} nights</b></p>
-            <h2>${{hotel.price * nights | number : '1.0-2'}}</h2>
-            <p>Per night</p>
-            <h3>${{hotel.price}}</h3>
-        </div>
+    <div class="hotel-card-content" *ngIf="description else priceHistory">
+            <div class="hotel-description-container">
+                    <div>
+                        <app-stars [stars]="hotel.rate" size="15"></app-stars>
+                    </div>
+                    <div>
+                        <h3>{{hotel.name | uppercase}}</h3>
+                    </div>
+                    <div>
+                        <p>{{hotel.description}}</p>
+                    </div>
+                    <div class="hotel-actions">
+                        <button class="btn btn-orange sm">Book now</button>
+                        <button class="btn btn-green sm" (click)="toggleDescription()">Price history</button>
+                    </div>
+                </div>
+                <div class="hotel-price-container">
+                    <div>
+                        <p>Total <b>{{nights}} nights</b></p>
+                        <h2>${{hotel.price * nights | number : '1.0-2'}}</h2>
+                        <p>Per night</p>
+                        <h3>${{hotel.price}}</h3>
+                    </div>
+                </div>
     </div>
 </div>
+
+<ng-template #priceHistory>
+    <div class="price-history-container">
+        <div class="price-history-header">
+            <h3>PRICE HISTORY 2017</h3>
+            <div class="back-to-description" (click)="toggleDescription()">
+                <img src="assets/img/back-description.svg" alt="">
+                <p>Back to description</p>
+            </div>
+        </div>
+        <div class="price-history-content" >
+            <div class="bar tooltip" *ngFor="let price of hotel.price_history" [style.height.px]="price.value / 3">
+                <span class="tooltiptext">$ {{price.value}}</span>
+            </div>
+        </div>
+    </div>
+</ng-template>
