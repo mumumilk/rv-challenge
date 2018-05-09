@@ -26,6 +26,10 @@
     font-size: 0.8em;
 }
 
+.hotel-description {
+    min-height: 100px;
+}
+
 .hotel-actions {
     padding: 5px;
 }

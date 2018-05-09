@@ -2,34 +2,8 @@
     <div class="hotel-image-container">
         <div [style.backgroundImage]="'url('+ hotel.image +')'" class="shadow"></div>
     </div>
-    <div class="hotel-card-content" *ngIf="description else priceHistory">
-        <app-hotel-description [hotel]="hotel"></app-hotel-description>
-            <!-- <div class="hotel-description-container">
-                    <div>
-                        <app-stars [stars]="hotel.rate" size="15"></app-stars>
-                    </div>
-                    <div>
-                        <h3>{{hotel.name | uppercase}}</h3>
-                    </div>
-                    <div>
-                        <p>{{hotel.description}}</p>
-                    </div>
-                    <div class="hotel-actions">
-                        <button class="btn btn-orange sm">Book now</button>
-                        <button class="btn btn-green sm" (click)="toggleDescription()">Price history</button>
-                    </div>
-                </div>
-                <div class="hotel-price-container">
-                    <div>
-                        <p>Total <b>{{nights}} nights</b></p>
-                        <h2>${{hotel.price * nights | number : '1.0-2'}}</h2>
-                        <p>Per night</p>
-                        <h3>${{hotel.price}}</h3>
-                    </div>
-                </div> -->
+    <div class="hotel-card-content">
+        <app-hotel-description *ngIf="toggle" [hotel]="hotel" [nightsQuantity]="nights" (priceHistoryClicked)="toggleContent()"></app-hotel-description>
+        <app-price-history-chart *ngIf="!toggle" [pricesHistory]="hotel.price_history" (backToDescriptionClicked)="toggleContent()"></app-price-history-chart>
     </div>
 </div>
-
-<ng-template #priceHistory>
-    <app-price-history-chart [pricesHistory]="hotel.price_history"></app-price-history-chart>
-</ng-template>

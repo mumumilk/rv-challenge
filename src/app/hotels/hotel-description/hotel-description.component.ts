@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Hotel } from '../shared/hotel.model';
 
 @Component({
@@ -10,7 +10,9 @@ export class HotelDescriptionComponent implements OnInit {
     constructor() { }
 
     @Input() hotel: Hotel;
-    @Input() nightsQuantity = 31;
+    @Input() nightsQuantity = 1;
+
+    @Output() priceHistoryClicked: EventEmitter<any> = new EventEmitter<any>();
 
     ngOnInit(): void { }
 }

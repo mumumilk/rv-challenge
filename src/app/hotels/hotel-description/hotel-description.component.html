@@ -6,12 +6,12 @@
         <div>
             <h3>{{hotel.name | uppercase}}</h3>
         </div>
-        <div>
+        <div class="hotel-description">
             <p>{{hotel.description}}</p>
         </div>
         <div class="hotel-actions">
             <button class="btn btn-orange sm">Book now</button>
-            <button class="btn btn-green sm">Price history</button>
+            <button class="btn btn-green sm" (click)="priceHistoryClicked.emit($event)">Price history</button>
         </div>
     </div>
     <div class="hotel-price-container">

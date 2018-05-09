@@ -11,7 +11,7 @@ import { HotelsService } from '../shared/hotels.service';
 export class HotelCardComponent implements OnInit {
     @Input() hotel: Hotel = new Hotel();
 
-    description = true;
+    toggle = true;
 
     get nights(): number {
         return this.hotelsService.totalDays;
@@ -23,7 +23,7 @@ export class HotelCardComponent implements OnInit {
 
     ngOnInit(): void { }
 
-    toggleDescription() {
-        this.description = !this.description;
+    toggleContent() {
+        this.toggle = !this.toggle;
     }
 }

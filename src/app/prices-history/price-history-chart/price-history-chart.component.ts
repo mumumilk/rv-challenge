@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PriceHistory } from '../shared/price-history.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { PriceHistory } from '../shared/price-history.model';
 export class PriceHistoryChartComponent implements OnInit {
     @Input() pricesHistory: PriceHistory[];
 
+    @Output() backToDescriptionClicked: EventEmitter<any> = new EventEmitter<any>();
     constructor() { }
 
     ngOnInit(): void { }
