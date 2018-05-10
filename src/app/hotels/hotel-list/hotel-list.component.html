@@ -9,7 +9,7 @@
                 <p class="title">Filters</p>
                 <app-range-slider min="100" max="600" (valuesChanged)="valueFilterChanged($event)"></app-range-slider>
                 <hr>
-                <app-stars-selection></app-stars-selection>
+                <app-stars-selection (starsChanged)="starFilterChanged($event)"></app-stars-selection>
             </div>
         </div>
         <div class="list-items">

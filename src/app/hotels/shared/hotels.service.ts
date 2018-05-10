@@ -29,6 +29,10 @@ export class HotelsService {
             params = params.append('maxPrice', filters.values.max);
         }
 
+        if (filters && filters.stars) {
+            params = params.append('stars', filters.stars.toString());
+        }
+
         return this._http.get(this.apiUrl + 'hotels', { params: params});
     }
 

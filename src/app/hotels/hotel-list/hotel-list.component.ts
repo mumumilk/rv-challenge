@@ -9,8 +9,12 @@ import { HotelsService } from '../shared/hotels.service';
 })
 export class HotelListComponent implements OnInit {
     @Input() hotels: Array<Hotel> = new Array<Hotel>();
-
     @Output() filtersChanged: EventEmitter<any> = new EventEmitter<any>();
+
+    selectedFilters: any = {
+        values: null,
+        stars: []
+    };
 
     constructor(
         public hotelsService: HotelsService
@@ -19,10 +23,16 @@ export class HotelListComponent implements OnInit {
     ngOnInit(): void { }
 
     valueFilterChanged(e) {
-        this.emitFilters(e);
+        this.selectedFilters.values = e;
+        this.emitFilters();
     }
 
-    emitFilters(values: any) {
-        this.filtersChanged.emit({values: values});
+    starFilterChanged(e) {
+        this.selectedFilters.stars = e;
+        this.emitFilters();
+    }
+
+    emitFilters() {
+        this.filtersChanged.emit(this.selectedFilters);
     }
 }
