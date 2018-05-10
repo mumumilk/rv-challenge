@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HotelsModule } from './hotels/hotels.module';
 import { HttpModule } from '@angular/http';
 import { SharedModule } from './shared/shared.module';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     HotelsModule,
     HttpModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

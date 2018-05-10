@@ -32,16 +32,20 @@ export class AppComponent implements OnInit, OnDestroy {
     return this.dateSelection.searchClicked.subscribe((data) => {
       this.hotelsService.checkin = data.checkin;
       this.hotelsService.checkout = data.checkout;
-      this.hotelSubs = this.getHotelsSubscription();
+      this.hotelSubs = this.getHotelsSubscription(null);
     });
   }
 
-  getHotelsSubscription(): Subscription {
+  getHotelsSubscription(filters: any): Subscription {
     return this
       .hotelsService
-      .getHotels()
+      .getHotels(filters)
       .subscribe(data => {
-        this.hotels = Hotel.fromJSONArray(data.json()['data']);
+        this.hotels = Hotel.fromJSONArray(data['data']);
       });
+  }
+
+  filtersChanged(filters) {
+    this.hotelSubs = this.getHotelsSubscription(filters);
   }
 }

@@ -12,6 +12,6 @@
     <app-date-selection #dateSelection></app-date-selection>
 </section>
 <section>
-    <app-hotel-list [hotels]="hotels"></app-hotel-list>
+    <app-hotel-list [hotels]="hotels" (filtersChanged)="filtersChanged($event)"></app-hotel-list>
 </section>
 <app-footer></app-footer>

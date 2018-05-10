@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Hotel } from '../shared/hotel.model';
 import { HotelsService } from '../shared/hotels.service';
 
@@ -10,13 +10,19 @@ import { HotelsService } from '../shared/hotels.service';
 export class HotelListComponent implements OnInit {
     @Input() hotels: Array<Hotel> = new Array<Hotel>();
 
+    @Output() filtersChanged: EventEmitter<any> = new EventEmitter<any>();
+
     constructor(
         public hotelsService: HotelsService
     ) { }
 
     ngOnInit(): void { }
 
-    teste(e) {
-        console.log(e);
+    valueFilterChanged(e) {
+        this.emitFilters(e);
+    }
+
+    emitFilters(values: any) {
+        this.filtersChanged.emit({values: values});
     }
 }
