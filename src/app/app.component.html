@@ -1,4 +1,3 @@
-<!-- <app-hotel-list [hotels]="hotels"></app-hotel-list> -->
 <app-header></app-header>
 <section class="main-background">
     <div class="main-logo">
@@ -9,9 +8,9 @@
     </div>
 </section>
 <section class="selection-background">
-    <app-date-selection #dateSelection></app-date-selection>
+    <app-date-selection (searchClicked)="selectedDateChanged($event)"></app-date-selection>
 </section>
 <section>
-    <app-hotel-list [hotels]="hotels" (filtersChanged)="filtersChanged($event)"></app-hotel-list>
+    <app-hotel-list *ngIf="searchClicked" [hotels]="hotels" (filtersChanged)="filtersChanged($event)"></app-hotel-list>
 </section>
 <app-footer></app-footer>

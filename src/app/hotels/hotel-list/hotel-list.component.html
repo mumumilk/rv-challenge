@@ -1,4 +1,4 @@
-<div class="list-container" *ngIf="hotels.length > 0">
+<div class="list-container">
     <div class="list-header">
         <p class="title">Best choices between August {{hotelsService.checkin?.number}}, 2017 and August {{hotelsService.checkout?.number}},
             2017</p>
@@ -12,8 +12,13 @@
                 <app-stars-selection (starsChanged)="starFilterChanged($event)"></app-stars-selection>
             </div>
         </div>
-        <div class="list-items">
+        <div class="list-items" *ngIf="hotels.length > 0; else noResults">
             <app-hotel-card *ngFor="let hotel of hotels" [hotel]="hotel"></app-hotel-card>
         </div>
     </div>
 </div>
+
+
+<ng-template #noResults>
+        <p style="flex: 1; margin: auto; text-align: center; font-family: 'Heebo', sans-serif; color: #B5B5B5">No results found</p>
+</ng-template>

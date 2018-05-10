@@ -13,27 +13,22 @@ export class AppComponent implements OnInit, OnDestroy {
   hotels: Array<Hotel> = new Array<Hotel>();
   hotelSubs: Subscription;
 
-  dateChangedSubs: Subscription;
-
-  @ViewChild('dateSelection') dateSelection: DateSelectionComponent;
+  searchClicked = false;
 
   constructor(private hotelsService: HotelsService) {}
 
-  ngOnInit() {
-    this.dateChangedSubs = this.getDateChangedSubscription();
-  }
+  ngOnInit() { }
 
   ngOnDestroy() {
     if (this.hotelSubs) { this.hotelSubs.unsubscribe(); }
-    if (this.dateChangedSubs) { this.dateChangedSubs.unsubscribe(); }
   }
 
-  getDateChangedSubscription(): Subscription {
-    return this.dateSelection.searchClicked.subscribe((data) => {
-      this.hotelsService.checkin = data.checkin;
-      this.hotelsService.checkout = data.checkout;
+  selectedDateChanged(e) {
+      this.hotelsService.checkin = e.checkin;
+      this.hotelsService.checkout = e.checkout;
       this.hotelSubs = this.getHotelsSubscription(null);
-    });
+
+      this.searchClicked = true;
   }
 
   getHotelsSubscription(filters: any): Subscription {
