@@ -15,4 +15,8 @@ export class HotelListComponent implements OnInit {
     ) { }
 
     ngOnInit(): void { }
+
+    teste(e) {
+        console.log(e);
+    }
 }
