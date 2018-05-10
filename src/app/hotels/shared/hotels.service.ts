@@ -22,13 +22,14 @@ export class HotelsService {
 
     getHotels(filters: any) {
 
-        const options: any = {};
+        let params = new HttpParams();
 
         if (filters && filters.values) {
-            options.params = new HttpParams().set('minPrice', filters.values.min).append('maxPrice', filters.values.max);
+            params = params.append('minPrice', filters.values.min);
+            params = params.append('maxPrice', filters.values.max);
         }
 
-        return this._http.get(this.apiUrl + 'hotels', options);
+        return this._http.get(this.apiUrl + 'hotels', { params: params});
     }
 
 }
