@@ -44,3 +44,9 @@
     align-items: center; 
     margin-top: -5%;
 }
+
+@media screen and (max-width: 600px) {
+    .main-logo h1 {
+        font-size: 2em;
+    }
+}
