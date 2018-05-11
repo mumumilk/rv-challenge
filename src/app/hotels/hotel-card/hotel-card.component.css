@@ -56,3 +56,17 @@
         margin-left: 0;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .hotel-container {
+        width: 95vw;
+        flex-direction: column;
+    }
+
+    .hotel-image-container div{
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        margin-left: 0;
+        background-position: 50% 50%;
+    }
+}

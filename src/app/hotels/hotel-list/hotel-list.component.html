@@ -15,9 +15,13 @@
                     </div>
                 </div>
                 <div *ngIf="showFilters">
-                    <app-range-slider min="100" max="600" (valuesChanged)="valueFilterChanged($event)"></app-range-slider>
+                    <div>
+                        <app-range-slider min="100" max="600" (valuesChanged)="valueFilterChanged($event)"></app-range-slider>
+                    </div>
                     <hr>
-                    <app-stars-selection (starsChanged)="starFilterChanged($event)"></app-stars-selection>
+                    <div>
+                        <app-stars-selection (starsChanged)="starFilterChanged($event)"></app-stars-selection>
+                    </div>
                 </div>
             </div>
         </div>

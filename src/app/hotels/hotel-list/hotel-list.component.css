@@ -78,7 +78,7 @@ br {
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1200px) {
     .list-content {
         flex-direction: column;
     }
@@ -93,5 +93,16 @@ br {
 
     .filter-icon {
         visibility: visible;
+    }
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+    .list-filters {
+        width: 50vw;
+    }
+
+    .list-filters > div:last-child {
+        margin: auto;
     }
 }
