@@ -6,10 +6,19 @@
     <div class="list-content">
         <div class="list-filters-container">
             <div class="list-filters">
-                <p class="title">Filters</p>
-                <app-range-slider min="100" max="600" (valuesChanged)="valueFilterChanged($event)"></app-range-slider>
-                <hr>
-                <app-stars-selection (starsChanged)="starFilterChanged($event)"></app-stars-selection>
+                <div class="filter-header">
+                    <div>
+                        <p class="title">Filters</p>
+                    </div>
+                    <div (click)="toggleFilters()">
+                        <img src="assets/img/filter.png" class="filter-icon" alt="">
+                    </div>
+                </div>
+                <div *ngIf="showFilters">
+                    <app-range-slider min="100" max="600" (valuesChanged)="valueFilterChanged($event)"></app-range-slider>
+                    <hr>
+                    <app-stars-selection (starsChanged)="starFilterChanged($event)"></app-stars-selection>
+                </div>
             </div>
         </div>
         <div class="list-items" *ngIf="hotels.length > 0; else noResults">

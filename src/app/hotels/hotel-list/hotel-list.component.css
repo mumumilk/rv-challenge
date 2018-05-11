@@ -44,6 +44,20 @@ hr {
     width: 290px;
 }
 
+.filter-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.filter-icon {
+    height: 20px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
 
 /** list header */
 .list-header {
@@ -65,11 +79,19 @@ br {
 }
 
 @media screen and (max-width: 600px) {
-    .list-filters-container {
-        display: none;
+    .list-content {
+        flex-direction: column;
     }
 
     br {
         display: block;
+    }
+
+    .filter-header {
+        border-top: 1px solid #D8D8D8;
+    }
+
+    .filter-icon {
+        visibility: visible;
     }
 }

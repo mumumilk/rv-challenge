@@ -11,6 +11,8 @@ export class HotelListComponent implements OnInit {
     @Input() hotels: Array<Hotel> = new Array<Hotel>();
     @Output() filtersChanged: EventEmitter<any> = new EventEmitter<any>();
 
+    showFilters = true;
+
     selectedFilters: any = {
         values: null,
         stars: []
@@ -34,5 +36,9 @@ export class HotelListComponent implements OnInit {
 
     emitFilters() {
         this.filtersChanged.emit(this.selectedFilters);
+    }
+
+    toggleFilters() {
+        this.showFilters = !this.showFilters;
     }
 }
