@@ -41,3 +41,18 @@
 .hotel-card-content > * {
     width: 100%;
 }
+
+@media screen and (max-width: 600px) {
+    .hotel-container {
+        flex-direction: column;
+        width: 95%;
+        margin: 10px auto;
+        padding: 0;
+    }
+    
+    .hotel-image-container div{
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        margin-left: 0;
+    }
+}

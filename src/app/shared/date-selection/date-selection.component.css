@@ -76,6 +76,10 @@
         flex-direction: column-reverse;
     }
 
+    .selection-card-header {
+        margin: 0;
+    }
+
     .selected-date {
         text-align: center;
         display: none;
