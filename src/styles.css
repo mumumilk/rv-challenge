@@ -49,6 +49,7 @@ button:focus {
 
 .btn-green {
     background: #79BD1A;
+    border: 1px solid #79BD1A;
     color: white;
 }
 

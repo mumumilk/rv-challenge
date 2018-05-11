@@ -45,7 +45,7 @@
 @media screen and (max-width: 600px) {
     .hotel-container {
         flex-direction: column;
-        width: 95%;
+        width: 95vw;
         margin: 10px auto;
         padding: 0;
     }

@@ -17,19 +17,25 @@
     <div class="hotel-price-container">
         <div class="hotel-price-content">
             <div>
-                <p>Total
-                    <b>{{nightsQuantity}} nights</b>
-                </p>
+                <div>
+                    <p>Total
+                        <b>{{nightsQuantity}} nights</b>
+                    </p>
+                </div>
+                <div>
+                    <h2>${{hotel.price * nightsQuantity | number : '1.0-2'}}</h2>
+                </div>
             </div>
             <div>
-                <h2>${{hotel.price * nightsQuantity | number : '1.0-2'}}</h2>
+                <div>
+                    <p>Per night</p>
+                </div>
+                <div>
+                    <h3>${{hotel.price}}</h3>
+                </div>
             </div>
-            <div>
-                <p>Per night</p>
-            </div>
-            <div>
-                <h3>${{hotel.price}}</h3>
-            </div>
+
+
         </div>
     </div>
 </div>

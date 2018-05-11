@@ -99,5 +99,11 @@
         border-top: 1px solid #D8D8D8;
         border-left: none;
         text-align: center;
+        flex-direction: row;
     }
+
+    .hotel-price-content > div:first-child{
+        border-right: 1px solid #D8D8D8;
+    }
+
 }

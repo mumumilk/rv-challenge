@@ -77,3 +77,20 @@
     font-family: 'Heebo', sans-serif;
     color: #B5B5B5;
 }
+
+@media screen and (max-width: 600px) {
+    .price-history-container {
+        height: auto;
+    }
+
+    .price-history-header {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .price-history-header > * {
+        text-align: center;
+    }
+
+}
